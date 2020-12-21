@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    MyList🙆
+  </title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+</head>
+<body oncopy="return false" oncontextmenu="return false">
+   
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        MyList📙
+      </a>
+      <a href="#" style="color: #fff" class="btn btn-light text-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Sign Out
+      </a>
+    </div>
+  </nav>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Do you want to Sign Out?
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No, Thanks</button>
+        <button type="button" class="btn btn-success" id="signOut">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <div class="container mt-4">
+   <div id="welcome"></div>
+   <div id="alertBox"></div>
+    <input type="text" placeholder="Enter Task" class="form-control mt-4" id="todoInput" />
+    <button class="btn btn-dark btn-block my-2" style="width: 100%" onclick="validateField()">Add</button>
+    <hr />
+     <h1 class="text-gray text-center mt-2">
+       My Tasks
+     </h1>
+    <ul class="list-group">
+      <li class="list-group-item bg-dark">Cras justo odio
+      </li>
+      
+      <li class="list-group-item bg-dark">Dapibus ac facilisis in</li>
+      <li class="list-group-item bg-dark">Morbi leo risus</li>
+      <li class="list-group-item bg-dark">Porta ac consectetur ac</li>
+      <li class="list-group-item bg-dark">Vestibulum at eros</li>
+    </ul>
+  </div>
+  <footer class="bg-dark mt-4" style="width: 100vw">
+    <h5 class="text-center">
+      Created by <a href="https://github.com/stark366">
+        stark366
+      </a>
+    </h5>
+  </footer>
+  
+<script src="main.js"></script>
+<script type="text/javascript" charset="utf-8">
+let name = "John"
+document.getElementById("welcome").innerHTML = `<h2 class="text-center text-danger mt-2">
+Hello ${name}
+</h2>`
+function validateField(){
+  const todoInput = document.getElementById("todoInput").value;
+  let error = "Please fill the field"
+  if(todoInput == ""){
+    document.getElementById("alertBox").innerHTML = `
+    <div class="alert alert-danger" role="alert">
+    ${error}
+    </div>
+    `
+  }
+  else{
+    alert("Done!")
+  }
+}
+const signoutbtn = document.getElementById("signOut")
+signoutbtn.addEventListener("click", () => {
+    console.log("Sign Out clicked")
+})
+</script>
+</body>
+</html>
