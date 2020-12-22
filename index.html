@@ -80,8 +80,12 @@ function validateField(){
   let error = "Please fill the field"
   if(todoInput == ""){
     document.getElementById("alertBox").innerHTML = `
-    <div class="alert alert-danger" role="alert">
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+
     ${error}
+
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
     </div>
     `
   }
